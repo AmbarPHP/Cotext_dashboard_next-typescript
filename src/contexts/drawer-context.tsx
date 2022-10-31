@@ -3,6 +3,8 @@ import { createContext, useState, useContext, useMemo } from 'react';
 import { IMenuItem } from '../types';
 import { MENU_LIST } from '../constants';
 
+
+//tipos de datas que guardara el contexto
 type DrawerContextType = {
   isOpened: boolean;
   toggleIsOpened: (value: boolean) => void;
@@ -13,8 +15,10 @@ type DrawerContextProviderProps = {
   children: React.ReactNode;
 };
 
+//Todo: crear un contexto para compartir los datos
 const DrawerContext = createContext<DrawerContextType | undefined>(undefined);
 
+// Todo: una funcion para expponer el provider,recibe un children para inyectar dentro del provider
 export const DrawerContextProvider = ({ children }: DrawerContextProviderProps) => {
   const [isOpened, toggleIsOpened] = useState(false);
 
@@ -25,6 +29,7 @@ export const DrawerContextProvider = ({ children }: DrawerContextProviderProps) 
   })
   , [isOpened]);
 
+//explicacion : comparte los valores del contexto con los childres pasados por parametro
   return (
     <DrawerContext.Provider value={value}>
       {children}
