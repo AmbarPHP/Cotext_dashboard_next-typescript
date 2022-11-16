@@ -21,12 +21,14 @@ route,
       selected={selected}
       sx={{
         '&.Mui-selected': {
-          backgroundColor: 'primary.dark',
-          color: 'common.white',
+          backgroundColor: 'primary.main',
+          color: 'primary.light',
+          borderRadius:'16px',
         },
         '&:hover': {
-          backgroundColor: 'primary.light',
-          color: 'common.white',
+          backgroundColor: 'secondary.main',
+          color: 'primary.light',
+          borderRadius:'16px',
         },
       }}
       onClick={onClick}
@@ -39,7 +41,7 @@ route,
           }),
         ]}
       >
-        <Icon sx={{ color: 'secondary.dark' }} />
+        <Icon sx={{ color: 'primary.light' }} />
       </ListItemIcon>
       <ListItemText primary={literal} />
     </ListItem>

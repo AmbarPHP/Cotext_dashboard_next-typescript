@@ -1,8 +1,9 @@
 import { useMediaQuery, useTheme, Drawer as MuiDrawer, styled } from '@mui/material';
-
 import { useDrawerContext } from '../contexts/drawer-context';
 import { MenuItemsList } from './MenuItemsList';
 
+//Todo: estilo del menu lateral
+//usa styled-component de material UI
 const StyledDrawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== 'isOpened',
 })<{ isOpened: boolean }>(({ isOpened, theme }) => ({
@@ -19,7 +20,7 @@ const StyledDrawer = styled(MuiDrawer, {
         duration: theme.transitions.duration.leavingScreen,
       }),
   '& .MuiDrawer-paper': {
-    background: '#D8DCD6',
+    background: '#ff888ff',//color del background
     position: 'static',
     overflowX: 'hidden'
   },
@@ -28,6 +29,8 @@ const StyledDrawer = styled(MuiDrawer, {
 export const Drawer = () => {
   const { isOpened, toggleIsOpened, menu } = useDrawerContext();
   const theme = useTheme();
+
+  //TODO: Establece un brakepoint MD-UI
   const isLargeScreen = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
@@ -37,6 +40,7 @@ export const Drawer = () => {
       onClose={() => toggleIsOpened(!isOpened)}
       isOpened={isOpened}
     >
+   
       <MenuItemsList items={menu}/>
     </StyledDrawer>
   );

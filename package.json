@@ -6,7 +6,8 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
-    "@mui/icons-material": "latest",
+    "@fontsource/rubik": "^4.5.11",
+    "@mui/icons-material": "^5.10.9",
     "@mui/material": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",

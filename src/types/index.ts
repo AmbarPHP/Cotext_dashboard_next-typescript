@@ -6,3 +6,16 @@ export interface IMenuItem {
   literal: string;
   Icon: OverridableComponent<SvgIconTypeMap>;
 };
+export type ITask = {
+  name: string;
+  description: string;
+  done: boolean;
+  status?:string;
+  id_subtask?:number;
+};
+
+export type ISubTask = {
+  name?: string;
+};
+
+

@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
 import { Toolbar, Box, styled } from "@mui/material";
+import theme from "../theme";
 
-import { Header } from "./Header";
+import { Header } from "./Header/Header";
 import { Drawer } from "./Drawer";
 import { Footer } from "./Footer";
 import { Main } from "./Main";
 
 import { DrawerContextProvider } from "../contexts/drawer-context";
+import { ThemeProvider } from "@mui/material/styles";
 
 const OuterContainer = styled(Box)`
   display: flex;
@@ -20,7 +22,10 @@ const InnerContainer = styled(Box)`
   display: flex;
   flex: 1;
   overflow: hidden;
-  height: inherit;
+  background-color: theme.palette.primary.main,
+  color: darkslategray;
+
+  text-align: center;
 `;
 
 interface ILayoutProps {
@@ -28,15 +33,18 @@ interface ILayoutProps {
 }
 
 export const Layout = ({ children }: ILayoutProps) => (
-  <DrawerContextProvider>
-    <OuterContainer>
-      <Header />
-      <Toolbar />
-      <InnerContainer>
+  //paso 6 : habilitar el provedor---> paso 7 -usar los valores del contexto en inner components
+  <ThemeProvider theme={theme}>
+    <DrawerContextProvider>
+      <OuterContainer>
+        <Header />
+        <Toolbar />
+        <InnerContainer>
         <Drawer />
-        <Main>{children}</Main>
-      </InnerContainer>
-      <Footer>Footer</Footer>
-    </OuterContainer>
-  </DrawerContextProvider>
+          <Main>{children}sdasdfadfasdf</Main>
+        </InnerContainer>
+        <Footer>Footer</Footer>
+      </OuterContainer>
+    </DrawerContextProvider>
+  </ThemeProvider>
 );

@@ -6,9 +6,11 @@ import {
   CustomersPage,
   OrdersPage,
   InventoryPage,
+  NewTaskPage
 } from './pages';
 
 import { ROUTES } from './constants';
+
 
 export const App = () => (
   <Layout>
@@ -18,6 +20,7 @@ export const App = () => (
       <Route path={ROUTES.orders} element={<OrdersPage />} />
       <Route path={ROUTES.customers} element={<CustomersPage />} />
       <Route path={ROUTES.inventory} element={<InventoryPage />} />
+      <Route path={ROUTES.task} element={<NewTaskPage />} />
     </Routes>
   </Layout>
 );

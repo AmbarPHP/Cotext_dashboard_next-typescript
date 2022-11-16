@@ -1,53 +1,28 @@
-# React Material UI Dashboard Layout template
+The challenge
+Your challenge is to build out this task management app and get it looking as close to the design as possible.
 
-[Live-Demo](https://katerinalupacheva.github.io/dashboard-layout/)
+Your users should be able to:
 
-Starter code with the implementation of:
-
-- Basic layout: header, the main content area with drawer, footer
-- Drawer toggle
-- Navigation between pages
-
-![demo](demo.gif)
-
-## Features
-
-- React v18
-- TypeScript v4
-- Material-UI v5
-- React Router v6
-- React Context
-- React Hooks
-- Responsive
-- Create-react-app under the hood
-
-## Quick Start
-
-1. Get the latest version
-
-```shell
-git clone https://github.com/KaterinaLupacheva/dashboard-layout.git MyDashboard
-cd MyDashboard
-```
-
-2. Run
-
-```shell
-npm install
-```
-
-3. Run
-
-```shell
-npm start
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### How to create from scratch
-
-I wrote the blog post on how to create Dashboard layout. You can read it [here](https://ramonak.io/posts/dashboard-layout-react-material-ui).
-
-### Pure React version
-
-The starter code of this Dashboard layout in pure React.js (without Material-UI) is in [this branch](https://github.com/KaterinaLupacheva/dashboard-layout/tree/pure-react).
+ View the optimal layout for the app depending on their device's screen size
+ See hover states for all interactive elements on the page
+ Create, read, update, and delete boards and tasks
+ Receive form validations when trying to create/edit boards and tasks
+ Mark subtasks as complete and move tasks between columns
+ Hide/show the board sidebar
+ Toggle the theme between light/dark modes
+ Bonus: Allow users to drag and drop tasks to change their status and re-order them in a column
+ Bonus: Keep track of any changes, even after refreshing the browser (localStorage could be used for this if you're not building out a full-stack app)
+ Bonus: Build this project as a full-stack application
+Expected Behaviour
+Boards
+ Clicking different boards in the sidebar will change to the selected board.
+ Clicking "Create New Board" in the sidebar opens the "Add New Board" modal.
+ Clicking in the dropdown menu "Edit Board" opens up the "Edit Board" modal where details can be changed.
+ Columns are added and removed for the Add/Edit Board modals.
+ Deleting a board deletes all columns and tasks and requires confirmation.
+Columns
+ A board needs at least one column before tasks can be added. If no columns exist, the "Add New Task" button in the header is disabled.
+ Clicking "Add New Column" opens the "Edit Board" modal where columns are added.
+Tasks
+ Adding a new task adds it to the bottom of the relevant column.
+ Updating a task's status will move the task to the relevant column. If you're taking on the drag and drop bonus, dragging a task to a different column will also update the status.
