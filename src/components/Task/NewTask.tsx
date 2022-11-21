@@ -3,13 +3,13 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import InputForm from "./InputForm";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 import { Hidden } from "@mui/material";
+import Form from "./Form";
 
-function App(): JSX.Element {
+function NewTask(): JSX.Element {
   const style = {
     position: "absolute" as "absolute",
     top: "50%",
@@ -66,7 +66,7 @@ function App(): JSX.Element {
             </CardHeader>
 
             <CardContent>
-              <InputForm></InputForm>
+              <Form></Form>
               <Button onClick={handleClose}>Close</Button>
             </CardContent>
           </Card>
@@ -76,4 +76,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default NewTask;
