@@ -1,23 +1,35 @@
 import React from 'react'
-import ITask from "../../types";}
+import { forEachChild } from 'typescript';
+import {ITask} from "../../types";
 
 type CardProps={
-    cardData:ITask
+    cardData:ITask;
 }
-
+//pasamos el ojeto task, con su description y subtask
 function Card(props:CardProps) {
     //aqui lista las tareas y la cantidad de subtareas
-    {cardData}=props;
-    const countCompleted = cardData.subtasks?.filter((item) => item.isCompleted === true);
+    const { cardData} = props;
+    console.log( "Columna task :",cardData);
+    console.log( "Columna task name:",cardData.name);
+    console.log( "Columna task subtask:",typeof(cardData.subtasks));
+
+   cardData.subtasks.map((item)=>{
+       <div>{item.name}</div>
+    });
+    
+
+    //filter((item) => item.isCompleted === true);  
 
   return (
     <div className='Card'>
-      <div className='Card__title'>{cardData.title}</div>
+       <div className='Card__title'>{cardData.name}</div>
       <div className='Card__count'>
-        {countCompleted?.length} of {cardData.subtasks?.length} subtasks
-      </div>
+        {/* {countCompleted?.length} of {cardData.subtask?.length} subtasks */}
+      </div> 
     </div>
   )
 }
 
 export default Card
+
+

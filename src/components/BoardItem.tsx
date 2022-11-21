@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom';
 import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { IBoardItem } from '../types';
 
-import { IMenuItem } from '../types';
-
-type Props = IMenuItem & {
+type Props = IBoardItem & {
   selected?: boolean;
   onClick?: () => void;
 };
 
-export const MenuItem: React.FC<Props> = ({
+export const BoardItem: React.FC<Props> = ({
 route,
   literal,
   Icon,
   selected,
-  onClick,
 }) => {
+
+ 
   const link = (
     <ListItem
       button
@@ -31,7 +31,7 @@ route,
           borderRadius:'16px',
         },
       }}
-      onClick={onClick}
+     
     >
       <ListItemIcon
         sx={[
@@ -43,6 +43,7 @@ route,
       >
         <Icon sx={{ color: 'primary.light' }} />
       </ListItemIcon>
+      
       <ListItemText primary={literal} />
     </ListItem>
   );

@@ -1,6 +1,6 @@
 import { useMediaQuery, useTheme, Drawer as MuiDrawer, styled } from '@mui/material';
 import { useDrawerContext } from '../contexts/drawer-context';
-import { MenuItemsList } from './MenuItemsList';
+import { BoardList } from './BoardList';
 
 //Todo: estilo del menu lateral
 //usa styled-component de material UI
@@ -40,8 +40,8 @@ export const Drawer = () => {
       onClose={() => toggleIsOpened(!isOpened)}
       isOpened={isOpened}
     >
-   
-      <MenuItemsList items={menu}/>
+  
+      <BoardList/>
     </StyledDrawer>
   );
 };

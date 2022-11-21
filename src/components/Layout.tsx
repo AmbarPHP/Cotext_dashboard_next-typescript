@@ -37,11 +37,11 @@ export const Layout = ({ children }: ILayoutProps) => (
   <ThemeProvider theme={theme}>
     <DrawerContextProvider>
       <OuterContainer>
-        <Header />
+        <Header /> 
         <Toolbar />
         <InnerContainer>
         <Drawer />
-          <Main>{children}sdasdfadfasdf</Main>
+          <Main>{children}</Main>
         </InnerContainer>
         <Footer>Footer</Footer>
       </OuterContainer>
